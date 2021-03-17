@@ -5,13 +5,45 @@
 }
 
 <h2>AddUser</h2>
+<br />
 
-<@*form action="AddUser" method="post">
-    <div class="form-group">
-        <label>Departman Adını Giriniz</label>
-        <input type="text" name="Ad" class="form-control" />
+
+@* taghelper method *@
+
+
+@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+    <div>
+
+        <div class="form-group">
+            @Html.LabelFor(i =>  i.Name)
+            @Html.TextBoxFor(i => i.Name , new { @class ="form-control" })
+            @Html.ValidationMessageFor(i => i.Name)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(i => i.Surname)
+            @Html.TextBoxFor(i => i.Surname , new { @class ="form-control"})
+            @Html.ValidationMessageFor(i => i.Surname)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(i => i.Phone)
+            @Html.TextBoxFor(i => i.Phone , new { @class = "form-control"})
+            @Html.ValidationMessageFor(i => i.Phone)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(i => i.Adress)
+            @Html.TextBoxFor(i => i.Adress , new { @class ="form-control"})
+            @Html.ValidationMessageFor(i => i.Adress)
+        </div>
+
+        @Html.HiddenFor(i =>i.Id)
+        @Html.ActionLink("Previous Page", "index", "", new { @class ="btn btn-warning"})
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
     </div>
-    <a href="/Departman/Index/" class="btn btn-warning">Geri Dön</a>
-    <button type="submit" class="btn btn-primary">Ekle</button>
 
-</form>*@
+}

@@ -9,7 +9,7 @@
 }
 
 
-<h2>User List</h2>
+<h2>Personel Information</h2>
 
 <hr />
 <a href="/User/AddUser" class="btn btn-success">Add User</a>
@@ -36,8 +36,8 @@
                     <td>@item.Surname</td>
                     <td>@item.Phone</td>
                     <td>@item.Adress</td>
-                    <td><a href="/User/Update/@item.Id" class="btn btn-warning">Update</a></td>
-                    <td><a href="/User/Delete/@item.Id" class="btn btn-warning">Delete</a></td>
+                    <td>@Html.ActionLink("Update","Update", new { id = item.Id}, new { @class ="btn btn-warning"})</td>
+                    <td>@Html.ActionLink("Delete","Delete",new { id = item.Id},new { @class ="btn btn-danger"})</td>
                 </tr>
 
             }
