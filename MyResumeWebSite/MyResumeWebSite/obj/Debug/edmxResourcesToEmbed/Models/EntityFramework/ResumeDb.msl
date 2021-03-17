@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyResumeModelStoreContainer" CdmEntityContainer="MyResumeEntities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="MyResumeModel.Courses">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoursesContent">
+      <EntityTypeMapping TypeName="MyResumeModel.CoursesContent">
+        <MappingFragment StoreEntitySet="CoursesContent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CoursesId" ColumnName="CoursesId" />
+          <ScalarProperty Name="CourseContent" ColumnName="CourseContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatabaseManagement">
+      <EntityTypeMapping TypeName="MyResumeModel.DatabaseManagement">
+        <MappingFragment StoreEntitySet="DatabaseManagement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Database" ColumnName="Database" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education">
+      <EntityTypeMapping TypeName="MyResumeModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="University" ColumnName="University" />
+          <ScalarProperty Name="Faculty" ColumnName="Faculty" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameTechnology">
+      <EntityTypeMapping TypeName="MyResumeModel.GameTechnology">
+        <MappingFragment StoreEntitySet="GameTechnology">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GameEngine" ColumnName="GameEngine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramingLanguage">
+      <EntityTypeMapping TypeName="MyResumeModel.ProgramingLanguage">
+        <MappingFragment StoreEntitySet="ProgramingLanguage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reference">
+      <EntityTypeMapping TypeName="MyResumeModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialMediaTable">
+      <EntityTypeMapping TypeName="MyResumeModel.SocialMediaTable">
+        <MappingFragment StoreEntitySet="SocialMediaTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SocialMedia" ColumnName="SocialMedia" />
+          <ScalarProperty Name="MediaAdress" ColumnName="MediaAdress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MyResumeModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebTechnology">
+      <EntityTypeMapping TypeName="MyResumeModel.WebTechnology">
+        <MappingFragment StoreEntitySet="WebTechnology">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Technology" ColumnName="Technology" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkExperiance">
+      <EntityTypeMapping TypeName="MyResumeModel.WorkExperiance">
+        <MappingFragment StoreEntitySet="WorkExperiance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="DateofEntry" ColumnName="DateofEntry" />
+          <ScalarProperty Name="DateofRelease" ColumnName="DateofRelease" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyResumeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Company" Type="nvarchar" MaxLength="250" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="CoursesContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoursesId" Type="int" />
+          <Property Name="CourseContent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DatabaseManagement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Database" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="University" Type="nvarchar" MaxLength="250" />
+          <Property Name="Faculty" Type="nvarchar" MaxLength="250" />
+          <Property Name="Department" Type="nvarchar" MaxLength="250" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="250" />
+          <Property Name="Date" Type="date" />
+        </EntityType>
+        <EntityType Name="GameTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameEngine" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ProgramingLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Language" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SocialMediaTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="SocialMedia" Type="nvarchar" MaxLength="30" />
+          <Property Name="MediaAdress" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="WebTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Technology" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="WorkExperiance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="nvarchar" MaxLength="150" />
+          <Property Name="Position" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateofEntry" Type="date" />
+          <Property Name="DateofRelease" Type="date" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CoursesContent_Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+          <End Role="CoursesContent" Type="Self.CoursesContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CoursesContent">
+              <PropertyRef Name="CoursesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaTable_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="SocialMediaTable" Type="Self.SocialMediaTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SocialMediaTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyResumeModelStoreContainer">
+          <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoursesContent" EntityType="Self.CoursesContent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DatabaseManagement" EntityType="Self.DatabaseManagement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameTechnology" EntityType="Self.GameTechnology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProgramingLanguage" EntityType="Self.ProgramingLanguage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SocialMediaTable" EntityType="Self.SocialMediaTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebTechnology" EntityType="Self.WebTechnology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkExperiance" EntityType="Self.WorkExperiance" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CoursesContent_Courses" Association="Self.FK_CoursesContent_Courses">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CoursesContent" EntitySet="CoursesContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaTable_User" Association="Self.FK_SocialMediaTable_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SocialMediaTable" EntitySet="SocialMediaTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyResumeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CoursesContent" Relationship="Self.FK_CoursesContent_Courses" FromRole="Courses" ToRole="CoursesContent" />
+        </EntityType>
+        <EntityType Name="CoursesContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoursesId" Type="Int32" />
+          <Property Name="CourseContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_CoursesContent_Courses" FromRole="CoursesContent" ToRole="Courses" />
+        </EntityType>
+        <EntityType Name="DatabaseManagement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Database" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="University" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Faculty" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Degree" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="GameTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameEngine" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProgramingLanguage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SocialMediaTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="SocialMedia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MediaAdress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SocialMediaTable_User" FromRole="SocialMediaTable" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SocialMediaTable" Relationship="Self.FK_SocialMediaTable_User" FromRole="User" ToRole="SocialMediaTable" />
+        </EntityType>
+        <EntityType Name="WebTechnology">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Technology" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WorkExperiance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateofEntry" Type="DateTime" Precision="0" />
+          <Property Name="DateofRelease" Type="DateTime" Precision="0" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_CoursesContent_Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+          <End Role="CoursesContent" Type="Self.CoursesContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CoursesContent">
+              <PropertyRef Name="CoursesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialMediaTable_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="SocialMediaTable" Type="Self.SocialMediaTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SocialMediaTable">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MyResumeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Courses" />
+          <EntitySet Name="CoursesContent" EntityType="Self.CoursesContent" />
+          <EntitySet Name="DatabaseManagement" EntityType="Self.DatabaseManagement" />
+          <EntitySet Name="Education" EntityType="Self.Education" />
+          <EntitySet Name="GameTechnology" EntityType="Self.GameTechnology" />
+          <EntitySet Name="ProgramingLanguage" EntityType="Self.ProgramingLanguage" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" />
+          <EntitySet Name="SocialMediaTable" EntityType="Self.SocialMediaTable" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="WebTechnology" EntityType="Self.WebTechnology" />
+          <EntitySet Name="WorkExperiance" EntityType="Self.WorkExperiance" />
+          <AssociationSet Name="FK_CoursesContent_Courses" Association="Self.FK_CoursesContent_Courses">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CoursesContent" EntitySet="CoursesContent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialMediaTable_User" Association="Self.FK_SocialMediaTable_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SocialMediaTable" EntitySet="SocialMediaTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyResumeModelStoreContainer" CdmEntityContainer="MyResumeEntities">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="MyResumeModel.Courses">
+              <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoursesContent">
+            <EntityTypeMapping TypeName="MyResumeModel.CoursesContent">
+              <MappingFragment StoreEntitySet="CoursesContent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CoursesId" ColumnName="CoursesId" />
+                <ScalarProperty Name="CourseContent" ColumnName="CourseContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatabaseManagement">
+            <EntityTypeMapping TypeName="MyResumeModel.DatabaseManagement">
+              <MappingFragment StoreEntitySet="DatabaseManagement">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Database" ColumnName="Database" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Education">
+            <EntityTypeMapping TypeName="MyResumeModel.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="Faculty" ColumnName="Faculty" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameTechnology">
+            <EntityTypeMapping TypeName="MyResumeModel.GameTechnology">
+              <MappingFragment StoreEntitySet="GameTechnology">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameEngine" ColumnName="GameEngine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProgramingLanguage">
+            <EntityTypeMapping TypeName="MyResumeModel.ProgramingLanguage">
+              <MappingFragment StoreEntitySet="ProgramingLanguage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reference">
+            <EntityTypeMapping TypeName="MyResumeModel.Reference">
+              <MappingFragment StoreEntitySet="Reference">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialMediaTable">
+            <EntityTypeMapping TypeName="MyResumeModel.SocialMediaTable">
+              <MappingFragment StoreEntitySet="SocialMediaTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SocialMedia" ColumnName="SocialMedia" />
+                <ScalarProperty Name="MediaAdress" ColumnName="MediaAdress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="MyResumeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebTechnology">
+            <EntityTypeMapping TypeName="MyResumeModel.WebTechnology">
+              <MappingFragment StoreEntitySet="WebTechnology">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Technology" ColumnName="Technology" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkExperiance">
+            <EntityTypeMapping TypeName="MyResumeModel.WorkExperiance">
+              <MappingFragment StoreEntitySet="WorkExperiance">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="DateofEntry" ColumnName="DateofEntry" />
+                <ScalarProperty Name="DateofRelease" ColumnName="DateofRelease" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyResumeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="250" />
+    <Property Name="Company" Type="nvarchar" MaxLength="250" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="CoursesContent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoursesId" Type="int" />
+    <Property Name="CourseContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DatabaseManagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Database" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="University" Type="nvarchar" MaxLength="250" />
+    <Property Name="Faculty" Type="nvarchar" MaxLength="250" />
+    <Property Name="Department" Type="nvarchar" MaxLength="250" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="250" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="GameTechnology">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameEngine" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="ProgramingLanguage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Language" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SocialMediaTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="SocialMedia" Type="nvarchar" MaxLength="30" />
+    <Property Name="MediaAdress" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="WebTechnology">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Technology" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="WorkExperiance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="150" />
+    <Property Name="Position" Type="nvarchar" MaxLength="150" />
+    <Property Name="DateofEntry" Type="date" />
+    <Property Name="DateofRelease" Type="date" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CoursesContent_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="CoursesContent" Type="Self.CoursesContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoursesContent">
+        <PropertyRef Name="CoursesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SocialMediaTable_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SocialMediaTable" Type="Self.SocialMediaTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SocialMediaTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyResumeModelStoreContainer">
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoursesContent" EntityType="Self.CoursesContent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatabaseManagement" EntityType="Self.DatabaseManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameTechnology" EntityType="Self.GameTechnology" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramingLanguage" EntityType="Self.ProgramingLanguage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SocialMediaTable" EntityType="Self.SocialMediaTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebTechnology" EntityType="Self.WebTechnology" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkExperiance" EntityType="Self.WorkExperiance" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CoursesContent_Courses" Association="Self.FK_CoursesContent_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="CoursesContent" EntitySet="CoursesContent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SocialMediaTable_User" Association="Self.FK_SocialMediaTable_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SocialMediaTable" EntitySet="SocialMediaTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
