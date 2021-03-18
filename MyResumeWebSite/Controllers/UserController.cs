@@ -20,8 +20,7 @@ namespace MyResumeWebSite.Controllers
 
         [HttpGet]
         public ActionResult AddUser()
-        {
-            
+        {            
             return View();
         }
 

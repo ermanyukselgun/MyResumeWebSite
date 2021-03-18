@@ -1,0 +1,36 @@
+﻿@model MyResumeWebSite.Models.MediaViewModel
+@{
+    ViewBag.Title = "AddMedia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddMedia</h2>
+
+<br />
+
+@using (Html.BeginForm("AddMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.socialMediaTable.UserId)
+        @Html.DropDownListFor(i => i.socialMediaTable.UserId, new SelectList(Model.Users, "Id", "Name"), " Choose User", new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.socialMediaTable.UserId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.socialMediaTable.SocialMedia)
+        @Html.TextBoxFor(i => i.socialMediaTable.SocialMedia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.socialMediaTable.SocialMedia)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.socialMediaTable.MediaAdress)
+        @Html.TextBoxFor(i => i.socialMediaTable.MediaAdress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.socialMediaTable.MediaAdress)
+    </div>
+
+    @Html.HiddenFor(i => i.socialMediaTable.Id)
+    @Html.ActionLink("Previous Page", "index", "", new { @class = "btn btn-warning" })
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

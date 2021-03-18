@@ -1,0 +1,48 @@
+﻿@model List<MyResumeWebSite.Models.EntityFramework.SocialMediaTable>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<h2>Social Media Adress</h2>
+
+<hr />
+<br />
+<a href="/SocialMedia/AddMedia" class="btn btn-success">Add Social Media Address</a>
+<br />
+<br />
+<div id="Tbl02">
+    <table class="table table-bordered table-hover">
+       
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserId</th>
+                <th>Social Media</th>
+                <th>Address</th>                
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.UserId</td>
+                    <td>@item.SocialMedia</td>
+                    <td>@item.MediaAdress</td>
+                    <td>@Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+
