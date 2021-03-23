@@ -1,0 +1,27 @@
+﻿@model MyResumeWebSite.Models.EntityFramework.SocialMediaTable
+
+@{
+    ViewBag.Title = "GetData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetData</h2>
+
+@using (Html.BeginForm("Update", "SocialMedia", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Id)
+        @Html.TextBoxFor(i => i.Id, new { @class = "form-control" , @disabled = "disabled" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.SocialMedia)
+        @Html.TextBoxFor(i => i.SocialMedia, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.MediaAdress)
+        @Html.TextBoxFor(i => i.MediaAdress, new { @class = "form-control" })
+    </div>
+    
+    @Html.ActionLink("Perivous Page", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-primary">Save</button>
+}

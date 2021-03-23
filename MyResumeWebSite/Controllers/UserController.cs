@@ -9,7 +9,7 @@ namespace MyResumeWebSite.Controllers
 {
     public class UserController : Controller
     {
-        MyResumeEntities _dbContext = new MyResumeEntities();     //connection
+        MyResumeEntities1 _dbContext = new MyResumeEntities1();     //connection
         // GET: User
         public ActionResult Index()
         {

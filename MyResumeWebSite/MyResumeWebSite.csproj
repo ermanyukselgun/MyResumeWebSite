@@ -105,15 +105,15 @@
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\npm.js" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EntityFramework\ResumeDb.Context.tt">
+    <Content Include="Models\EntityFramework\MyResume.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ResumeDb.Context.cs</LastGenOutput>
-      <DependentUpon>ResumeDb.edmx</DependentUpon>
+      <DependentUpon>MyResume.edmx</DependentUpon>
+      <LastGenOutput>MyResume.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EntityFramework\ResumeDb.tt">
+    <Content Include="Models\EntityFramework\MyResume.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ResumeDb.edmx</DependentUpon>
-      <LastGenOutput>ResumeDb.cs</LastGenOutput>
+      <DependentUpon>MyResume.edmx</DependentUpon>
+      <LastGenOutput>MyResume.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
   </ItemGroup>
@@ -125,65 +125,57 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Courses.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\CoursesContent.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\DatabaseManagement.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Education.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\GameTechnology.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\MyResume.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResume.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\MyResume.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResume.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\MyResume.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyResume.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\ProgramingLanguage.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Reference.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\ResumeDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResumeDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\ResumeDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResumeDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityFramework\ResumeDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResumeDb.edmx</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\SocialMediaTable.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\User.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\WebTechnology.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\WorkExperiance.cs">
-      <DependentUpon>ResumeDb.tt</DependentUpon>
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MediaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\EntityFramework\ResumeDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ResumeDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EntityFramework\ResumeDb.edmx.diagram">
-      <DependentUpon>ResumeDb.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\css\bootstrap-theme.css.map" />
     <Content Include="Content\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\css\bootstrap.css.map" />
@@ -192,6 +184,13 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\EntityFramework\MyResume.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyResume.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EntityFramework\MyResume.edmx.diagram">
+      <DependentUpon>MyResume.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
@@ -199,6 +198,7 @@
     <Content Include="Views\User\AddUser.cshtml" />
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\AddMedia.cshtml" />
+    <Content Include="Views\SocialMedia\GetData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

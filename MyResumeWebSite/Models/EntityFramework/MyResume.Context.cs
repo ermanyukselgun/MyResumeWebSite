@@ -13,10 +13,10 @@ namespace MyResumeWebSite.Models.EntityFramework
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyResumeEntities : DbContext
+    public partial class MyResumeEntities1 : DbContext
     {
-        public MyResumeEntities()
-            : base("name=MyResumeEntities")
+        public MyResumeEntities1()
+            : base("name=MyResumeEntities1")
         {
         }
     

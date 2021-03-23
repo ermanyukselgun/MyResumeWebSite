@@ -15,10 +15,7 @@ namespace MyResumeWebSite.Models.EntityFramework
     public partial class SocialMediaTable
     {
         public int Id { get; set; }
-        public Nullable<int> UserId { get; set; }
         public string SocialMedia { get; set; }
         public string MediaAdress { get; set; }
-    
-        public virtual User User { get; set; }
     }
 }

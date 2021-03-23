@@ -1,4 +1,4 @@
-﻿@model MyResumeWebSite.Models.MediaViewModel
+﻿@model MyResumeWebSite.Models.EntityFramework.SocialMediaTable
 @{
     ViewBag.Title = "AddMedia";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,31 +6,30 @@
 
 <h2>AddMedia</h2>
 
-<br />
+@*<form action="AddMedia" class="form-group" method="post" >
+        <div>
+            <label>Social Media</label>
+            <input type="text" name="SocialMedia" class="form-control" />
+        </div>
+        <div>
+            <label>Media Url</label>
+            <input type="text" name="MediaAdress" class="form-control" />
+        </div>
+
+        <button  class="btn btn-primary">Save</button>
+    </form>*@
 
 @using (Html.BeginForm("AddMedia", "SocialMedia", FormMethod.Post))
-{
+{    
     <div class="form-group">
-        @Html.LabelFor(i => i.socialMediaTable.UserId)
-        @Html.DropDownListFor(i => i.socialMediaTable.UserId, new SelectList(Model.Users, "Id", "Name"), " Choose User", new { @class = "form-control" })
-        @Html.ValidationMessageFor(i => i.socialMediaTable.UserId)
+        @Html.LabelFor(i => i.SocialMedia)
+        @Html.TextBoxFor(i => i.SocialMedia, new { @class = "form-control" ,@required="required" })
     </div>
-
     <div class="form-group">
-        @Html.LabelFor(i => i.socialMediaTable.SocialMedia)
-        @Html.TextBoxFor(i => i.socialMediaTable.SocialMedia, new { @class = "form-control" })
-        @Html.ValidationMessageFor(i => i.socialMediaTable.SocialMedia)
+        @Html.LabelFor(i => i.MediaAdress)
+        @Html.TextBoxFor(i => i.MediaAdress, new { @class = "form-control" })
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(i => i.socialMediaTable.MediaAdress)
-        @Html.TextBoxFor(i => i.socialMediaTable.MediaAdress, new { @class = "form-control" })
-        @Html.ValidationMessageFor(i => i.socialMediaTable.MediaAdress)
-    </div>
-
-    @Html.HiddenFor(i => i.socialMediaTable.Id)
-    @Html.ActionLink("Previous Page", "index", "", new { @class = "btn btn-warning" })
-
-
+    @Html.ActionLink("Perivous Page", "Index", null, new { @class = "btn btn-warning" })
     <button type="submit" class="btn btn-primary">Save</button>
 }
+
