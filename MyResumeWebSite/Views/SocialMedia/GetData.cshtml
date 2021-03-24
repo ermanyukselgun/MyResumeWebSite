@@ -11,15 +11,15 @@
 {
     <div class="form-group">
         @Html.LabelFor(i => i.Id)
-        @Html.TextBoxFor(i => i.Id, new { @class = "form-control" , @disabled = "disabled" })
+        @Html.TextBoxFor(i => i.Id, new { @class = "form-control"})
     </div>
     <div class="form-group">
         @Html.LabelFor(i => i.SocialMedia)
-        @Html.TextBoxFor(i => i.SocialMedia, new { @class = "form-control" })
+        @Html.TextBoxFor(i => i.SocialMedia, new { @class = "form-control" ,@required = "required" })
     </div>
     <div class="form-group">
         @Html.LabelFor(i => i.MediaAdress)
-        @Html.TextBoxFor(i => i.MediaAdress, new { @class = "form-control" })
+        @Html.TextBoxFor(i => i.MediaAdress, new { @class = "form-control" ,@required = "required" })
     </div>
     
     @Html.ActionLink("Perivous Page", "Index", null, new { @class = "btn btn-warning" })

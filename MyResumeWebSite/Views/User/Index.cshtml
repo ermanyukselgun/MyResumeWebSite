@@ -24,6 +24,7 @@
                 <th>Surname</th>
                 <th>Phone</th>
                 <th>Address</th>
+                <th>Update/Delete</th>
             </tr>
         </thead>
 
@@ -36,8 +37,10 @@
                     <td>@item.Surname</td>
                     <td>@item.Phone</td>
                     <td>@item.Adress</td>
-                    <td>@Html.ActionLink("Update","Update", new { id = item.Id}, new { @class ="btn btn-warning"})</td>
-                    <td>@Html.ActionLink("Delete","Delete",new { id = item.Id},new { @class ="btn btn-danger"})</td>
+                    <td>
+                        @Html.ActionLink("Update","Update", new { id = item.Id}, new { @class ="btn btn-warning"})
+                        @Html.ActionLink("Delete","Delete",new { id = item.Id},new { @class ="btn btn-danger"})
+                    </td>
                 </tr>
 
             }

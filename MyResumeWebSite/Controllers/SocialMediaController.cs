@@ -42,14 +42,28 @@ namespace MyResumeWebSite.Controllers
             var data = _dbContext.SocialMediaTable.Find(Id); //Id yı yakalayıp get data sayfasına yonledirdik
             return View("GetData", data);
         }
-        public ActionResult Update(SocialMediaTable socialMediaTable)
+
+
+        public ActionResult Update(SocialMediaTable xx)
         {
-            var model = _dbContext.SocialMediaTable.Find(socialMediaTable.Id);
-            model.SocialMedia = socialMediaTable.SocialMedia;
-            model.MediaAdress = socialMediaTable.MediaAdress;
+            var model = _dbContext.SocialMediaTable.Find(xx.Id);
+            model.SocialMedia = xx.SocialMedia;
+            model.MediaAdress = xx.MediaAdress;
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "SocialMedia");
         }
+
+        //public ActionResult Delete(int id)
+        //{
+        //    var del = _dbContext.SocialMediaTable.Find(id);
+        //    if (del == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    _dbContext.SocialMediaTable.Remove(del);
+        //    _dbContext.SaveChanges();
+        //    return RedirectToAction("Index", "SocialMedia");
+        //}
 
     }
 }
