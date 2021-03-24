@@ -33,7 +33,7 @@
 
     <div class="form-group">
         @Html.LabelFor(i => i.Date)
-        @Html.TextBoxFor(i => i.Date, new { @class = "form-control", @required = "required" })
+        @Html.TextBoxFor(i => i.Date, "{0:MM/dd/yy}", new { @class = "form-control", @required = "required" , type = "date" } )
     </div>
 
     @Html.HiddenFor(i => i.Id)

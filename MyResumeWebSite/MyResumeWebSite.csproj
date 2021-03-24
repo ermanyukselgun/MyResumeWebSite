@@ -119,7 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\ProgramKnowledgeController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,6 +175,7 @@
     <Compile Include="Models\EntityFramework\WorkExperiance.cs">
       <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProgramKnowledgeModelView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +205,11 @@
     <Content Include="Views\SocialMedia\GetData.cshtml" />
     <Content Include="Views\Education\Index.cshtml" />
     <Content Include="Views\Education\AddEducation.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Courses\AddCourses.cshtml" />
+    <Content Include="Views\ProgramKnowledge\Index.cshtml" />
+    <Content Include="Views\ProgramKnowledge\AddLanguage.cshtml" />
+    <Content Include="Views\ProgramKnowledge\AddDataManagement.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

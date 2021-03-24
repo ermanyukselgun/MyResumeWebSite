@@ -30,7 +30,46 @@ namespace MyResumeWebSite.Controllers
             {
                 _dbContext.Education.Add(education);
             }
+            else
+            {
+                var update = _dbContext.Education.Find(education.Id);
+                if (update == null)
+                {
+                    return HttpNotFound();
+                }
+                update.University = education.University;
+                update.Faculty = education.Faculty;
+                update.Department = education.Department;
+                update.Degree = education.Degree;
+                update.Date = education.Date;
+            }
             _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Education");
+        }
+
+        public ActionResult Update(int id)
+        {
+            var model = _dbContext.Education.Find(id);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("AddEducation", model);
+        }
+
+        public ActionResult Delete (int id)
+        {
+            var model = _dbContext.Education.Find(id);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            _dbContext.Education.Remove(model);
+            _dbContext.SaveChanges();
+
             return RedirectToAction("Index", "Education");
         }
     }

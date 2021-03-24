@@ -1,0 +1,25 @@
+﻿@model MyResumeWebSite.Models.ProgramKnowledgeModelView
+
+@{
+    ViewBag.Title = "AddDataManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Data Management </h2>
+<hr />
+<br />
+
+@using (Html.BeginForm("AddDataManagement", "ProgramKnowledge", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Dat_Management.Database)
+        @Html.TextBoxFor(i => i.Dat_Management.Database, new { @class = "form-control", @required = "required" })
+    </div>
+
+
+    @Html.HiddenFor(i => i.Dat_Management.Id)
+    @Html.ActionLink("Previous Page", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+

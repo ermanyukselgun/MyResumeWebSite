@@ -1,0 +1,58 @@
+﻿@model List<MyResumeWebSite.Models.EntityFramework.CoursesContent>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2>Courses</h2>
+<hr />
+<br />
+<a href="/Courses/AddCourses" class="btn btn-success">New Courses</a>
+<br />
+<br />
+<div id="Tbl04">
+    <table class="table table-bordered table-hover " id="tblPersonel">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Course Name</th>
+                <th>Company</th>
+                <th>Course Content</th>
+                <th>Date</th>
+                <th>Update/Delete</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Courses.Id</th>
+                    <td>@item.Courses.CourseName</td>
+                    <td>@item.Courses.Company</td>
+                    <td>@item.CourseContent</td>
+                    <td>
+                        @if (item.Courses.Date != null)
+                        {
+                            @item.Courses.Date.Value.ToString("dd-MM-yyyy")
+                        }
+                    </td>
+                    <td width="180px;">
+                        @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>
+
+

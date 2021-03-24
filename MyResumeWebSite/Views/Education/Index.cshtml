@@ -7,7 +7,6 @@
 }
 
 <h2>Index</h2>
-
 <hr />
 <br />
 <a href="/Education/AddEducation" class="btn btn-success">Add New Education</a>
@@ -23,7 +22,7 @@
                 <th>Faculty</th>
                 <th>Department</th>
                 <th>Degree</th>
-                <th>Date</th>
+                <th>Graduation Date</th>
                 <th>Update/Delete</th>
             </tr>
         </thead>
@@ -31,18 +30,23 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <th>@item.Id</th>
-                <td>@item.University</td>
-                <td>@item.Faculty</td>
-                <td>@item.Department</td>
-                <td>@item.Degree</td>
-                <td>@item.Date</td>
-                <td>
-                    @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-                </td>
-            </tr>
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.University</td>
+                    <td>@item.Faculty</td>
+                    <td>@item.Department</td>
+                    <td>@item.Degree</td>
+                    <td>
+                        @if(@item.Date != null)
+                        {
+                            @item.Date.Value.ToString("dd-MM-yyyy")
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
             }
         </tbody>
 

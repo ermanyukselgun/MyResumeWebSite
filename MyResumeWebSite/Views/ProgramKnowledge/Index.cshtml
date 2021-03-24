@@ -1,0 +1,85 @@
+﻿@model MyResumeWebSite.Models.ProgramKnowledgeModelView
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Program Knowledge Information Page</h2>
+<hr />
+<br />
+
+@* ====================================================================Programing Language=================================================== *@
+
+<div id="language">
+    <a href="/ProgramKnowledge/AddLanguage" class="btn btn-success">Add New Language</a>
+    <br />
+    <br />
+    <div id="Tbl03">
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Language</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.P_Language)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Language</td>
+
+                        <td>
+                            @Html.ActionLink("Update", "UpdateLanguage", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "DeleteLanguage", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<br />
+<hr />
+<br />
+@* ====================================================================Data Management=================================================== *@
+
+<div id="Data">
+    <a href="/ProgramKnowledge/AddDataManagement" class="btn btn-success">Add New Data Management</a>
+    <br />
+    <br />
+    <div id="Tbl03">
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Database</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.D_Management)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Database</td>
+
+                        <td>
+                            @Html.ActionLink("Update", "UpdateDataManagement", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "DeleteDataManagement", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
