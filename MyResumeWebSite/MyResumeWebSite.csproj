@@ -210,6 +210,8 @@
     <Content Include="Views\ProgramKnowledge\Index.cshtml" />
     <Content Include="Views\ProgramKnowledge\AddLanguage.cshtml" />
     <Content Include="Views\ProgramKnowledge\AddDataManagement.cshtml" />
+    <Content Include="Views\ProgramKnowledge\AddWebTech.cshtml" />
+    <Content Include="Views\ProgramKnowledge\AddGameTech.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

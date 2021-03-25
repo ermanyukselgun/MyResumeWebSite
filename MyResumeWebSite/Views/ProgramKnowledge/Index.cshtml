@@ -11,19 +11,21 @@
 <br />
 
 @* ====================================================================Programing Language=================================================== *@
+<h4>Programing Language</h4>
+<br />
 
 <div id="language">
     <a href="/ProgramKnowledge/AddLanguage" class="btn btn-success">Add New Language</a>
     <br />
     <br />
-    <div id="Tbl03">
+    <div id="Tbl04">
         <table class="table table-bordered table-hover">
 
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Language</th>
-
+                    <th>Update/Delete</th>
                 </tr>
             </thead>
 
@@ -50,18 +52,20 @@
 <br />
 @* ====================================================================Data Management=================================================== *@
 
+<h4>Data Usage/Management</h4>
+<br />
 <div id="Data">
     <a href="/ProgramKnowledge/AddDataManagement" class="btn btn-success">Add New Data Management</a>
     <br />
     <br />
-    <div id="Tbl03">
+    <div id="Tbl05">
         <table class="table table-bordered table-hover">
 
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Database</th>
-
+                    <th>Update/Delete</th>
                 </tr>
             </thead>
 
@@ -83,3 +87,87 @@
         </table>
     </div>
 </div>
+<br />
+<hr />
+<br />
+
+@* ====================================================================Web Technology=================================================== *@
+
+<h4>Web Technology</h4>
+<br />
+<div id="Data">
+    <a href="/ProgramKnowledge/AddWebTech" class="btn btn-success">Add New Web Technology</a>
+    <br />
+    <br />
+    <div id="Tbl06">
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Web Technology</th>
+                    <th>Update/Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.W_Technology)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Technology</td>
+
+                        <td>
+                            @Html.ActionLink("Update", "UpdateWebTechnology", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "DeleteWebTechnology", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<br />
+<hr />
+<br />
+
+@* ====================================================================Game Technology=================================================== *@
+<h4>Game Technology</h4>
+<br />
+<div id="Data">
+    <a href="/ProgramKnowledge/AddGameTech" class="btn btn-success">Add New Web Technology</a>
+    <br />
+    <br />
+    <div id="Tbl07">
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Game Technology</th>
+                    <th>Update/Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.G_Technology)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.GameEngine</td>
+
+                        <td>
+                            @Html.ActionLink("Update", "UpdateGameTechnology", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "DeleteGameTechnology", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<br />
+<hr />
+<br />

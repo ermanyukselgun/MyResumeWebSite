@@ -15,6 +15,8 @@ namespace MyResumeWebSite.Models
 
         public ProgramingLanguage Prog_Language { get; set; }
         public DatabaseManagement Dat_Management { get; set; }
+        public WebTechnology Web_Tech { get; set; }
+        public GameTechnology Game_Tech { get; set; }
 
 
 
