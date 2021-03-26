@@ -1,0 +1,44 @@
+﻿@model MyResumeWebSite.Models.EntityFramework.AdminUser
+
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add New Admin User</h2>
+
+<br />
+
+
+@* taghelper method *@
+
+
+@using (Html.BeginForm("AddAdmin", "UAdmin", FormMethod.Post))
+{
+    <div>
+
+        <div class="form-group">
+            @Html.LabelFor(i => i.UserName)
+            @Html.TextBoxFor(i => i.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(i => i.UserName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(i => i.Password)
+            @Html.TextBoxFor(i => i.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(i => i.Password)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(i => i.Role)
+            @Html.TextBoxFor(i => i.Role, new { @class = "form-control" })
+            @Html.ValidationMessageFor(i => i.Role)
+        </div>       
+
+        @Html.HiddenFor(i => i.Id)
+        @Html.ActionLink("Previous Page", "Index", "", new { @class = "btn btn-warning" })
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    </div>
+}
