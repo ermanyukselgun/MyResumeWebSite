@@ -36,5 +36,6 @@ namespace MyResumeWebSite.Models.EntityFramework
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<WebTechnology> WebTechnology { get; set; }
         public virtual DbSet<WorkExperiance> WorkExperiance { get; set; }
+        public virtual DbSet<AdminUser> AdminUsers { get; set; }
     }
 }
