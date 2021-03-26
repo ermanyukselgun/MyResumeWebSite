@@ -123,10 +123,14 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ProgramKnowledgeController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
+    <Compile Include="Controllers\UAdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WorkExpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\AdminUser.cs">
+      <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Courses.cs">
       <DependentUpon>MyResume.tt</DependentUpon>
@@ -215,6 +219,8 @@
     <Content Include="Views\ProgramKnowledge\AddGameTech.cshtml" />
     <Content Include="Views\WorkExp\Index.cshtml" />
     <Content Include="Views\WorkExp\AddExperiens.cshtml" />
+    <Content Include="Views\UAdmin\Index.cshtml" />
+    <Content Include="Views\UAdmin\AddAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
