@@ -1,0 +1,46 @@
+﻿@model MyResumeWebSite.Models.EntityFramework.WorkExperiance
+
+
+
+@{
+    ViewBag.Title = "AddExperiens";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddExperiens</h2>
+
+<hr />
+<br />
+
+@using (Html.BeginForm("AddExperiens", "WorkExp", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Company)
+        @Html.TextBoxFor(i => i.Company, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.Position)
+        @Html.TextBoxFor(i => i.Position, new { @class = "form-control", @required = "required" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.DateofEntry)
+        @Html.TextBoxFor(i => i.DateofEntry, "{0:MM/dd/yy}", new { @class = "form-control", @required = "required", type = "date" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.DateofRelease)
+        @Html.TextBoxFor(i => i.DateofRelease, "{0:MM/dd/yy}", new { @class = "form-control", @required = "required", type = "date" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(i => i.City)
+        @Html.TextBoxFor(i => i.City, new { @class = "form-control", @required = "required" })
+    </div>
+
+    @Html.HiddenFor(i => i.Id)
+    @Html.ActionLink("Previous Page", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}

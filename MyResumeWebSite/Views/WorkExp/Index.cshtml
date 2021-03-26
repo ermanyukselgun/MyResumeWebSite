@@ -1,0 +1,63 @@
+﻿@model List<MyResumeWebSite.Models.EntityFramework.WorkExperiance>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Work Experiens Information Page</h2>
+
+<hr />
+<br />
+
+@* ==================================================================== Work Exp =================================================== *@
+
+<div id="language">
+    <a href="/WorkExp/AddExperiens" class="btn btn-success">Add New Experiens</a>
+    <br />
+    <br />
+    <div id="Tbl08">
+        <table class="table table-bordered table-hover">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Company</th>
+                    <th>Position</th>
+                    <th>Date Of Entry</th>
+                    <th>Date Of Release</th>
+                    <th>City</th>
+                    <th>Update/Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Company</td>
+                        <td>@item.Position</td>
+                        <td>
+                            @if (@item.DateofEntry != null)
+                            {
+                                @item.DateofEntry.Value.ToString("dd-MM-yyyy")
+                            }
+                        </td>
+                        <td>
+                            @if (@item.DateofRelease != null)
+                            {
+                                @item.DateofRelease.Value.ToString("dd-MM-yyyy")
+                            }
+                        </td>
+                        <td>@item.City</td>
+                        <td>
+                            @Html.ActionLink("Update", "UpdateExperiens", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Delete", "DeleteExperiens", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
