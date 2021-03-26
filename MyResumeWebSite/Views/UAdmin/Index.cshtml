@@ -1,0 +1,46 @@
+﻿@model List<MyResumeWebSite.Models.EntityFramework.AdminUser>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<hr />
+<br />
+<a href="/Uadmin/AddAdmin" class="btn btn-success">Add Admin User</a>
+<br />
+<br />
+<div id="Tbl07">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Role</th>                
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.UserName</td>
+                    <td>@item.Password</td>
+                    <th>@item.Role</th>                    
+                    <td>
+                        @Html.ActionLink("Update", "UpdateAdmin", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "DeleteAdmin", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+</div>
