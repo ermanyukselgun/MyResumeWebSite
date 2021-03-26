@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="MyResumeModel.WebTechnology" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyResumeModel.WorkExperiance" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="MyResumeModel.FK_CoursesContent_Courses" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyResumeModel.AdminUser" Width="1.5" PointX="8.25" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
