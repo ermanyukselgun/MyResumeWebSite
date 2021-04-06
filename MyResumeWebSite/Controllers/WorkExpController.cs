@@ -11,6 +11,9 @@ namespace MyResumeWebSite.Controllers
     {
         MyResumeEntities1 _dbContext = new MyResumeEntities1();     //connection
 
+        [Authorize]
+
+
         // GET: WorkExp
         public ActionResult Index()
         {

@@ -11,6 +11,9 @@ namespace MyResumeWebSite.Controllers
     public class ProgramKnowledgeController : Controller
     {
         MyResumeEntities1 _dbContext = new MyResumeEntities1();  //Connection
+
+        [Authorize]
+
         // GET: ProgramKnowledge
         public ActionResult Index()
         {

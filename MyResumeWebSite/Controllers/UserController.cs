@@ -10,6 +10,9 @@ namespace MyResumeWebSite.Controllers
     public class UserController : Controller
     {
         MyResumeEntities1 _dbContext = new MyResumeEntities1();     //connection
+
+        [Authorize]
+
         // GET: User
         public ActionResult Index()
         {

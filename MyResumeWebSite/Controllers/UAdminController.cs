@@ -7,13 +7,17 @@ using System.Web.Mvc;
 
 namespace MyResumeWebSite.Controllers
 {
-    [Authorize] //kullanıcı adı ve sifre girisi olmadan girisi yasaklar webconfig te ayarlama yapıldı
+    //[Authorize] //kullanıcı adı ve sifre girisi olmadan girisi yasaklar webconfig te ayarlama yapıldı
 
 
 
     public class UAdminController : Controller
     {
         MyResumeEntities1 _dbContext = new MyResumeEntities1();     //connection
+
+
+        [Authorize]
+
 
         // GET: UAdmin
         public ActionResult Index()

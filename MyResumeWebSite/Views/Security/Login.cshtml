@@ -1,0 +1,46 @@
+﻿@model MyResumeWebSite.Models.EntityFramework.AdminUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container>
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center alert-success">Login Page</h2>
+                        <br />
+                        @ViewBag.Mesaj
+                        <br />
+                        <br class="my-2">
+                        @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                        {
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    @Html.LabelFor(i => i.UserName)
+                                    @Html.TextBoxFor(i => i.UserName, new { @class = "form-control", placeholder = "User Name" })
+                                </div>
+                                <br class="my-2">
+                                @Html.LabelFor(i => i.Password)
+                                @Html.TextBoxFor(i => i.Password, new { @class = "form-control", placeholder = "Password", type = "password" })
+                                <br class="my-4">
+                                <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Login</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -10,6 +10,8 @@ namespace MyResumeWebSite.Controllers
     public class SocialMediaController : Controller
     {
         MyResumeEntities1 _dbContext = new MyResumeEntities1();
+        [Authorize]
+
         // GET: SocialMedia
         public ActionResult Index()
         {

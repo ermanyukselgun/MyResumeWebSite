@@ -122,6 +122,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ProgramKnowledgeController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\UAdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -221,6 +222,7 @@
     <Content Include="Views\WorkExp\AddExperiens.cshtml" />
     <Content Include="Views\UAdmin\Index.cshtml" />
     <Content Include="Views\UAdmin\AddAdmin.cshtml" />
+    <Content Include="Views\Security\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

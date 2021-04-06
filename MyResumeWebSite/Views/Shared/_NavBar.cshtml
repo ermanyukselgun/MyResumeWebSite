@@ -13,8 +13,8 @@
             <li><a href="/UAdmin/Index">Users</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Kayıt Ol</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Giriş</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user">@HttpContext.Current.User.Identity.Name</span></a></li>
+            <li><a href="/Security/LogOut"><span class="glyphicon glyphicon-log-out">Çıkış</span></a></li>
         </ul>
     </div>
 </nav> 
