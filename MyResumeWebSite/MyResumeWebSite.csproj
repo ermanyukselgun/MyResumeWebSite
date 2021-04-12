@@ -249,6 +249,7 @@
     <Compile Include="Models\EntityFramework\WorkExperiance.cs">
       <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomeModelView.cs" />
     <Compile Include="Models\ProgramKnowledgeModelView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
