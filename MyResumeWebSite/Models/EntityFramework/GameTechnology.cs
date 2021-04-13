@@ -16,5 +16,6 @@ namespace MyResumeWebSite.Models.EntityFramework
     {
         public int Id { get; set; }
         public string GameEngine { get; set; }
+        public Nullable<int> Knowledge_level { get; set; }
     }
 }

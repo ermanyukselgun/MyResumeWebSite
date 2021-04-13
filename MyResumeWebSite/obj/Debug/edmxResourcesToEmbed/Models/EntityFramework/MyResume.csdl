@@ -25,6 +25,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Database" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Knowledge_level" Type="Int32" />
   </EntityType>
   <EntityType Name="Education">
     <Key>
@@ -43,6 +44,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GameEngine" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Knowledge_level" Type="Int32" />
   </EntityType>
   <EntityType Name="ProgramingLanguage">
     <Key>
@@ -50,6 +52,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Language" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Knowledge_level" Type="Int32" />
   </EntityType>
   <EntityType Name="Reference">
     <Key>
@@ -86,6 +89,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Technology" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Knowledge_level" Type="Int32" />
   </EntityType>
   <EntityType Name="WorkExperiance">
     <Key>

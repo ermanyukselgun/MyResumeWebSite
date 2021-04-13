@@ -25,6 +25,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Language</th>
+                    <th>Knowledge level (0-100)</th>
                     <th>Update/Delete</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <tr>
                         <th>@item.Id</th>
                         <td>@item.Language</td>
+                        <td>@item.Knowledge_level</td>
 
                         <td>
                             @Html.ActionLink("Update", "UpdateLanguage", new { id = item.Id }, new { @class = "btn btn-warning" })
@@ -65,6 +67,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Database</th>
+                    <th>Knowledge level (0-100)</th>
                     <th>Update/Delete</th>
                 </tr>
             </thead>
@@ -72,15 +75,17 @@
             <tbody>
                 @foreach (var item in Model.D_Management)
                 {
-                    <tr>
-                        <th>@item.Id</th>
-                        <td>@item.Database</td>
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.Database</td>
+                    <td>@item.Knowledge_level</td>
 
-                        <td>
-                            @Html.ActionLink("Update", "UpdateDataManagement", new { id = item.Id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Delete", "DeleteDataManagement", new { id = item.Id }, new { @class = "btn btn-danger" })
-                        </td>
-                    </tr>
+
+                    <td>
+                        @Html.ActionLink("Update", "UpdateDataManagement", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "DeleteDataManagement", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
                 }
             </tbody>
 
@@ -106,6 +111,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Web Technology</th>
+                    <th>Knowledge level (0-100)</th>
                     <th>Update/Delete</th>
                 </tr>
             </thead>
@@ -113,15 +119,17 @@
             <tbody>
                 @foreach (var item in Model.W_Technology)
                 {
-                    <tr>
-                        <th>@item.Id</th>
-                        <td>@item.Technology</td>
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.Technology</td>
+                    <td>@item.Knowledge_level</td>
 
-                        <td>
-                            @Html.ActionLink("Update", "UpdateWebTechnology", new { id = item.Id }, new { @class = "btn btn-warning" })
-                            @Html.ActionLink("Delete", "DeleteWebTechnology", new { id = item.Id }, new { @class = "btn btn-danger" })
-                        </td>
-                    </tr>
+
+                    <td>
+                        @Html.ActionLink("Update", "UpdateWebTechnology", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "DeleteWebTechnology", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
                 }
             </tbody>
 
@@ -146,6 +154,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Game Technology</th>
+                    <th>Knowledge level (0-100)</th>
                     <th>Update/Delete</th>
                 </tr>
             </thead>
@@ -156,6 +165,7 @@
                     <tr>
                         <th>@item.Id</th>
                         <td>@item.GameEngine</td>
+                        <td>@item.Knowledge_level</td>
 
                         <td>
                             @Html.ActionLink("Update", "UpdateGameTechnology", new { id = item.Id }, new { @class = "btn btn-warning" })

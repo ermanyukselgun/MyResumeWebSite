@@ -37,6 +37,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Database" Type="nvarchar" MaxLength="30" />
+          <Property Name="Knowledge_level" Type="int" />
         </EntityType>
         <EntityType Name="Education">
           <Key>
@@ -55,6 +56,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GameEngine" Type="nvarchar" MaxLength="30" />
+          <Property Name="Knowledge_level" Type="int" />
         </EntityType>
         <EntityType Name="ProgramingLanguage">
           <Key>
@@ -62,6 +64,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Language" Type="nvarchar" MaxLength="30" />
+          <Property Name="Knowledge_level" Type="int" />
         </EntityType>
         <EntityType Name="Reference">
           <Key>
@@ -98,6 +101,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Technology" Type="nvarchar" MaxLength="30" />
+          <Property Name="Knowledge_level" Type="int" />
         </EntityType>
         <EntityType Name="WorkExperiance">
           <Key>
@@ -169,6 +173,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Database" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Knowledge_level" Type="Int32" />
         </EntityType>
         <EntityType Name="Education">
           <Key>
@@ -187,6 +192,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GameEngine" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Knowledge_level" Type="Int32" />
         </EntityType>
         <EntityType Name="ProgramingLanguage">
           <Key>
@@ -194,6 +200,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Language" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Knowledge_level" Type="Int32" />
         </EntityType>
         <EntityType Name="Reference">
           <Key>
@@ -230,6 +237,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Technology" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Knowledge_level" Type="Int32" />
         </EntityType>
         <EntityType Name="WorkExperiance">
           <Key>
@@ -309,6 +317,7 @@
           <EntitySetMapping Name="DatabaseManagement">
             <EntityTypeMapping TypeName="MyResumeModel.DatabaseManagement">
               <MappingFragment StoreEntitySet="DatabaseManagement">
+                <ScalarProperty Name="Knowledge_level" ColumnName="Knowledge_level" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Database" ColumnName="Database" />
               </MappingFragment>
@@ -329,6 +338,7 @@
           <EntitySetMapping Name="GameTechnology">
             <EntityTypeMapping TypeName="MyResumeModel.GameTechnology">
               <MappingFragment StoreEntitySet="GameTechnology">
+                <ScalarProperty Name="Knowledge_level" ColumnName="Knowledge_level" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="GameEngine" ColumnName="GameEngine" />
               </MappingFragment>
@@ -337,6 +347,7 @@
           <EntitySetMapping Name="ProgramingLanguage">
             <EntityTypeMapping TypeName="MyResumeModel.ProgramingLanguage">
               <MappingFragment StoreEntitySet="ProgramingLanguage">
+                <ScalarProperty Name="Knowledge_level" ColumnName="Knowledge_level" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Language" ColumnName="Language" />
               </MappingFragment>
@@ -377,6 +388,7 @@
           <EntitySetMapping Name="WebTechnology">
             <EntityTypeMapping TypeName="MyResumeModel.WebTechnology">
               <MappingFragment StoreEntitySet="WebTechnology">
+                <ScalarProperty Name="Knowledge_level" ColumnName="Knowledge_level" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Technology" ColumnName="Technology" />
               </MappingFragment>

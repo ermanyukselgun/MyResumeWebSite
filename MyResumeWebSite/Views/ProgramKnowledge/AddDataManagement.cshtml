@@ -15,6 +15,10 @@
         @Html.LabelFor(i => i.Dat_Management.Database)
         @Html.TextBoxFor(i => i.Dat_Management.Database, new { @class = "form-control", @required = "required" })
     </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Dat_Management.Knowledge_level)
+        @Html.TextBoxFor(i => i.Dat_Management.Knowledge_level, new { @class = "form-control", @required = "required" })
+    </div>
 
 
     @Html.HiddenFor(i => i.Dat_Management.Id)
