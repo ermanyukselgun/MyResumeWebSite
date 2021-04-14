@@ -26,6 +26,7 @@ namespace MyResumeWebSite.Controllers
             homeModelView.socialMediaTables = _dbContext.SocialMediaTable.ToList();
             homeModelView.W_Technology = _dbContext.WebTechnology.ToList();
             homeModelView.workExperiances = _dbContext.WorkExperiance.ToList();
+            homeModelView.coursesContents = _dbContext.CoursesContent.ToList();
 
             return View(homeModelView);
         }

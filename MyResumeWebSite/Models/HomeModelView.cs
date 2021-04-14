@@ -10,6 +10,7 @@ namespace MyResumeWebSite.Models
     {
         public IEnumerable<User> users { get; set; }
         public IEnumerable<Courses> courses { get; set; }
+        public IEnumerable<CoursesContent> coursesContents { get; set; }
         public IEnumerable<Education> educations { get; set; }
         public IEnumerable<SocialMediaTable> socialMediaTables { get; set; }
         public IEnumerable<Reference> references { get; set; }

@@ -118,7 +118,7 @@
 
             <div class="section-title">
                 <h2>Skills</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>The software technologies I am familiar with are listed below. </p>
             </div>
 
             <div class="row skills-content">
@@ -180,6 +180,75 @@
 
                 </div>
 
+            </div>
+
+        </div>
+    </section>
+    <!-- -----------------------------------------------------------Resume Section ------------------------------------------------------------------ -->
+
+    <section id="resume" class="resume">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Resume</h2>
+                @*<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>*@
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h3 class="resume-title">Sumary</h3>
+                    <div class="resume-item pb-0">
+                        <h4>@Model.users.Where(i => i.Id == 1).Select(i => i.Name).FirstOrDefault()  @Model.users.Where(i => i.Id == 1).Select(i => i.Surname).FirstOrDefault()</h4>
+                        <p><em>I have a 5-year engineering career outside the software industry. I continue to develop myself in the field of software, within my field of interest. </em></p>
+                        <ul>
+                            @foreach (var item in Model.users)
+                            {
+                                <li>@item.Adress</li>
+                                <li>@item.Phone</li>
+                            }
+
+                            <li>@Model.socialMediaTables.Where(i => i.Id == 1).Select(i => i.MediaAdress).FirstOrDefault()</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="resume-title">Education</h3>
+
+                    @foreach (var item in Model.educations)
+                    {
+                        <div class="resume-item">
+
+                            <h4>@item.University</h4>
+                            <h5>@item.Faculty</h5>
+                            <h5>@item.Department</h5>
+                            <br />
+                            <h5><em>@item.Date.Value.ToString("dd-MM-yyyy")</em></h5>
+                            <h5><em>@item.Degree</em></h5>
+                        </div>
+                    }
+
+
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="resume-title">Courses &amp; Certificates </h3>
+                    @foreach (var item in Model.courses)
+                    {
+                        <div class="resume-item">
+                            <h4>@item.Company</h4>
+                            <h4>@item.CourseName</h4>
+                            <h5>@item.Date.Value.ToString("dd-MM-yyyy")</h5>
+                            <p><em></em></p>
+                            <ul>
+                                @*@foreach (var conTent in Model.coursesContents)
+                                {
+                                    <li>@conTent.CourseContent.Where( i => i.id)</li>
+                                }*@
+
+                            </ul>
+                        </div>
+
+                    }
+                    
+                </div>
             </div>
 
         </div>
