@@ -195,6 +195,7 @@
             </div>
 
             <div class="row">
+                @*left page*@
                 <div class="col-lg-6" data-aos="fade-up">
                     <h3 class="resume-title">Sumary</h3>
                     <div class="resume-item pb-0">
@@ -225,12 +226,23 @@
                             <h5><em>@item.Degree</em></h5>
                         </div>
                     }
+                    @*job experience*@
+                    <h3 class="resume-title">Professional Experience</h3>
+                    @foreach (var item in Model.workExperiances)
+                    {
+                        <div class="resume-item">
+                            <h4>@item.Position</h4>
+                            <h5>@item.Company</h5>  <br />                           
+                            <h5>Date of Entry: @item.DateofEntry.Value.ToString("dd-MM-yyyy")</h5>
+                            <h5>Date of Release: @item.DateofRelease.Value.ToString("dd-MM-yyyy")</h5>
+                            <p><em>@item.City</em></p>
+                        </div>
+                    }
 
+                    @*courses*@
 
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="resume-title">Courses &amp; Certificates </h3>
-                    @foreach (var item in Model.courses)
+                    @foreach (var item in Model.courses.Where(i => i.Id == 7))
                     {
                         <div class="resume-item">
                             <h4>@item.Company</h4>
@@ -238,16 +250,42 @@
                             <h5>@item.Date.Value.ToString("dd-MM-yyyy")</h5>
                             <p><em></em></p>
                             <ul>
-                                @*@foreach (var conTent in Model.coursesContents)
+                                @foreach (var conTent in Model.coursesContents.Where(i => i.CoursesId == item.Id))
                                 {
-                                    <li>@conTent.CourseContent.Where( i => i.id)</li>
-                                }*@
+                                    <li>@conTent.CourseContent</li>
+                                }
 
                             </ul>
                         </div>
 
                     }
-                    
+
+                   
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                    @*right page*@
+                    @*courses*@
+                    <h3 class="resume-title">Courses &amp; Certificates </h3>
+                    @foreach (var item in Model.courses.Where(i => i.Id != 7))
+                    {
+                        <div class="resume-item">
+                            <h4>@item.Company</h4>
+                            <h4>@item.CourseName</h4>
+                            <h5>@item.Date.Value.ToString("dd-MM-yyyy")</h5>
+                            <p><em></em></p>
+                            <ul>
+                                @foreach (var conTent in Model.coursesContents.Where(i => i.CoursesId == item.Id))
+                                {
+                                    <li>@conTent.CourseContent</li>
+                                }
+
+                            </ul>
+                        </div>
+
+                    }
+
                 </div>
             </div>
 

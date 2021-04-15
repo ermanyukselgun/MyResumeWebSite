@@ -42,7 +42,7 @@ namespace MyResumeWebSite.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Home");
         }
     }
 }
