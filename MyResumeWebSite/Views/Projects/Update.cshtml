@@ -1,12 +1,13 @@
 ﻿@model MyResumeWebSite.Models.EntityFramework.MyProject
+
 @{
-    ViewBag.Title = "AddProject";
+    ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AddProject</h2>
+<h2>Update</h2>
 
-@using (Html.BeginForm("AddProject", "Projects", FormMethod.Post , new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Update", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
         @Html.LabelFor(i => i.projectName)
