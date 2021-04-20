@@ -19,6 +19,7 @@ namespace MyResumeWebSite.Models
         public IEnumerable<WebTechnology> W_Technology { get; set; }
         public IEnumerable<GameTechnology> G_Technology { get; set; }
         public IEnumerable<WorkExperiance> workExperiances { get; set; }
+        public IEnumerable<MyProject> myProjects { get; set; }
 
     }
 }

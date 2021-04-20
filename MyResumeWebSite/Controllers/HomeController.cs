@@ -27,6 +27,7 @@ namespace MyResumeWebSite.Controllers
             homeModelView.W_Technology = _dbContext.WebTechnology.ToList();
             homeModelView.workExperiances = _dbContext.WorkExperiance.ToList();
             homeModelView.coursesContents = _dbContext.CoursesContent.ToList();
+            homeModelView.myProjects = _dbContext.MyProjects.ToList();
 
             return View(homeModelView);
         }
