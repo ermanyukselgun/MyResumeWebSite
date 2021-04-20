@@ -53,6 +53,16 @@
     <Property Name="GameEngine" Type="nvarchar" MaxLength="30" />
     <Property Name="Knowledge_level" Type="int" />
   </EntityType>
+  <EntityType Name="MyProjects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="projectName" Type="nvarchar" MaxLength="250" />
+    <Property Name="projectContent" Type="nvarchar(max)" />
+    <Property Name="Picture" Type="nvarchar(max)" />
+    <Property Name="projectLanguage" Type="nvarchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="ProgramingLanguage">
     <Key>
       <PropertyRef Name="Id" />
@@ -128,6 +138,7 @@
     <EntitySet Name="DatabaseManagement" EntityType="Self.DatabaseManagement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GameTechnology" EntityType="Self.GameTechnology" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MyProjects" EntityType="Self.MyProjects" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgramingLanguage" EntityType="Self.ProgramingLanguage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SocialMediaTable" EntityType="Self.SocialMediaTable" Schema="dbo" store:Type="Tables" />

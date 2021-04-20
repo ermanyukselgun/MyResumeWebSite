@@ -131,6 +131,7 @@
       <End Role="CoursesContent" EntitySet="CoursesContent" />
     </AssociationSet>
     <EntitySet Name="AdminUsers" EntityType="MyResumeModel.AdminUser" />
+    <EntitySet Name="MyProjects" EntityType="MyResumeModel.MyProject" />
   </EntityContainer>
   <EntityType Name="AdminUser">
     <Key>
@@ -140,5 +141,15 @@
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Role" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MyProject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="projectName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="projectContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="projectLanguage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

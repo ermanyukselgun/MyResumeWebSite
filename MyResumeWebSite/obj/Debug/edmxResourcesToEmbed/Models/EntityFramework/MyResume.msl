@@ -122,5 +122,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MyProjects">
+      <EntityTypeMapping TypeName="MyResumeModel.MyProject">
+        <MappingFragment StoreEntitySet="MyProjects">
+          <ScalarProperty Name="projectLanguage" ColumnName="projectLanguage" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="projectContent" ColumnName="projectContent" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

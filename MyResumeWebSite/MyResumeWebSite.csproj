@@ -100,6 +100,7 @@
     <Content Include="Assets\img\apple-touch-icon.png" />
     <Content Include="Assets\img\favicon.png" />
     <Content Include="Assets\img\hero-bg.jpg" />
+    <Content Include="Assets\img\img1.png" />
     <Content Include="Assets\img\IMG_6700.jpg" />
     <Content Include="Assets\img\portfolio\portfolio-1.jpg" />
     <Content Include="Assets\img\portfolio\portfolio-2.jpg" />
@@ -190,6 +191,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProgramKnowledgeController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\UAdminController.cs" />
@@ -214,6 +216,9 @@
       <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\GameTechnology.cs">
+      <DependentUpon>MyResume.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntityFramework\MyProject.cs">
       <DependentUpon>MyResume.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\MyResume.Context.cs">
@@ -325,6 +330,8 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Shared\_NavbarHome.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\AddProject.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,33 @@
+﻿@model MyResumeWebSite.Models.EntityFramework.MyProject
+@{
+    ViewBag.Title = "AddProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddProject</h2>
+
+@using (Html.BeginForm("AddProject", "Projects", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.projectName)
+        @Html.TextBoxFor(i => i.projectName, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.projectContent)
+        @Html.TextBoxFor(i => i.projectContent, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.projectLanguage)
+        @Html.TextBoxFor(i => i.projectLanguage, new { @class = "form-control", @required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Picture, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="picture" id="picture" accept=".jpg,.JPG,.png,.jpeg,.JPEG,.gif" />
+        </div>
+    </div>
+    <br />
+    <br />
+    @Html.ActionLink("Perivous Page", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-primary">Save</button>
+}

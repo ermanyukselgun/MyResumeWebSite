@@ -1,0 +1,47 @@
+﻿@model List<MyResumeWebSite.Models.EntityFramework.MyProject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<hr />
+<br />
+<a href="/Projects/AddProject" class="btn btn-success">Add New Project</a>
+<br />
+<br />
+<div id="Tbl03">
+    <table class="table table-bordered table-hover">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name of project</th>
+                <th>Content</th>
+                <th>Language</th>
+                <th>Picture</th>                
+                <th>Update/Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <td>@item.projectName</td>
+                    <td>@item.projectContent</td>
+                    <td>@item.projectLanguage</td>
+                    <td><img src="~/Assets/img/@item.Picture" width="100" /></td>                    
+                    <td>
+                        @Html.ActionLink("Update", "Update", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

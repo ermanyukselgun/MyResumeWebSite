@@ -58,6 +58,16 @@
           <Property Name="GameEngine" Type="nvarchar" MaxLength="30" />
           <Property Name="Knowledge_level" Type="int" />
         </EntityType>
+        <EntityType Name="MyProjects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="projectName" Type="nvarchar" MaxLength="250" />
+          <Property Name="projectContent" Type="nvarchar(max)" />
+          <Property Name="Picture" Type="nvarchar(max)" />
+          <Property Name="projectLanguage" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="ProgramingLanguage">
           <Key>
             <PropertyRef Name="Id" />
@@ -133,6 +143,7 @@
           <EntitySet Name="DatabaseManagement" EntityType="Self.DatabaseManagement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameTechnology" EntityType="Self.GameTechnology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MyProjects" EntityType="Self.MyProjects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProgramingLanguage" EntityType="Self.ProgramingLanguage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SocialMediaTable" EntityType="Self.SocialMediaTable" Schema="dbo" store:Type="Tables" />
@@ -279,6 +290,7 @@
             <End Role="CoursesContent" EntitySet="CoursesContent" />
           </AssociationSet>
           <EntitySet Name="AdminUsers" EntityType="MyResumeModel.AdminUser" />
+          <EntitySet Name="MyProjects" EntityType="MyResumeModel.MyProject" />
         </EntityContainer>
         <EntityType Name="AdminUser">
           <Key>
@@ -288,6 +300,16 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Role" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MyProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="projectName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="projectContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="projectLanguage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -412,6 +434,17 @@
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MyProjects">
+            <EntityTypeMapping TypeName="MyResumeModel.MyProject">
+              <MappingFragment StoreEntitySet="MyProjects">
+                <ScalarProperty Name="projectLanguage" ColumnName="projectLanguage" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="projectContent" ColumnName="projectContent" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
