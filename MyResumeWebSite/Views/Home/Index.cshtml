@@ -319,38 +319,47 @@
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
                             <img src="~/Assets/img/@item.Picture" class="img-fluid" alt="">
-                            @if (item.projectLanguage.ToLower() == "python")
+                            @if (item.projectLanguage.ToLower().IndexOf("python") != -1)
                             {
                                 <i class="fab fa-python fa-lg"></i>
                             }
-                            @if (item.projectLanguage.ToLower() == "java")
+
+                            @if (item.projectLanguage.ToLower().IndexOf("java") != -1)
                             {
                                 <i class="fab fa-java fa-lg"></i>
+
                             }
-                            @if (item.projectLanguage.ToLower() == "c#")
+
+                            @if (item.projectLanguage.ToLower().IndexOf("c#") != -1)
                             {
                                 <i class="fab fa-c# fa-lg"></i>
+
                             }
-                            @if (item.projectLanguage.ToLower() == "unity")
+                            @if (item.projectLanguage.ToLower().IndexOf("unity") != -1)
                             {
                                 <i class="fab fa-unity fa-lg"></i>
+
                             }
-                            @if (item.projectLanguage.ToLower() == "html5")
+                            @if (item.projectLanguage.ToLower().IndexOf("html5") != -1)
                             {
                                 <i class="fab fa-html5 fa-lg"></i>
+
                             }
-                            @if (item.projectLanguage.ToLower() == "css3")
+
+                            @if (item.projectLanguage.ToLower().IndexOf("css3") != -1)
                             {
                                 <i class="fab fa-css3-alt fa-lg"></i>
                             }
-                            @if (item.projectLanguage.ToLower() == "bootstrap")
+                            @if (item.projectLanguage.ToLower().IndexOf("bootstrap") != -1)
                             {
                                 <i class="fab fa-bootstrap fa-lg"></i>
+
                             }
-                            @if (item.projectLanguage.ToLower() == "mvc")
+                            @if (item.projectLanguage.ToLower().IndexOf("mvc") != -1)
                             {
                                 <i class="fab fa-mvc fa-lg"></i>
                             }
+                           
 
                             <div class="portfolio-links">
                                 <a href="@item.Picture" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
